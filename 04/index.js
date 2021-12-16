@@ -45,7 +45,7 @@ const basicBingo = (input) => {
     }
   }
 };
-//5685
+
 const checkBoard = (board) => {
   let undefinedColumnsIndexes = [];
   const boardSize = board.length;
