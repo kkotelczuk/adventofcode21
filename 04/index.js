@@ -24,7 +24,8 @@ const basicBingo = (input) => {
       )
     );
   for (number of randomNumbers) {
-    for (board of boards) {
+    for (let i = 0; i < boards.length; i++) {
+      const board = boards[i];
       board.forEach((row) => {
         const i = row.indexOf(number);
         if (i >= 0) {
@@ -40,7 +41,11 @@ const basicBingo = (input) => {
           }, 0);
           return acc;
         }, 0);
-        return number * boardScore;
+        if (boards.length > 1) {
+          boards.splice(i--, 1);
+        } else {
+          return number * boardScore;
+        }
       }
     }
   }
